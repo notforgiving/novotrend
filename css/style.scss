@@ -93,6 +93,51 @@ body {
   margin: 0 auto;
 }
 
+.btn {
+  display: block;
+  background: linear-gradient(
+    89.92deg,
+    #256ad1 0.06%,
+    #5899f9 52.91%,
+    #2a74e2 99.93%
+  );
+  box-shadow: 0px 4px 0px #3773c9;
+  border-radius: 201px;
+  padding: 40px 60px;
+  transition: 0.3s;
+  margin: 0 auto;
+  @include tablet {
+  padding: 27px 40px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 0px 0px 0px #3773c9;
+  }
+  svg,
+  img {
+    vertical-align: middle;
+    margin-right: 15px;
+    width: 20px;
+    @include tablet {
+      width: 16px;
+    }
+  }
+  span {
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #ffffff;
+    @include tablet {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
 .header {
   background-image: url(../img/main_bg.png);
   background-position: center;
@@ -107,6 +152,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 90px;
+    @include tablet {
+      margin-bottom: 44px;
+    }
   }
   // .header_logo
   &_logo {
@@ -249,13 +298,18 @@ body {
     right: -10px;
     width: 100vw;
     z-index: 50;
-    transition: 0.3s;
+    background: #fff;
     transform: translateX(100%);
     opacity: 0;
+    padding-bottom: 30px;
+    visibility: hidden;
+    box-shadow: 1px 7px 4px 0px #0000000f;
 
     &.show {
+      transition: 0.3s;
       transform: translateX(0%);
       opacity: 1;
+      visibility: visible;
 
       .header_links {
         li {
@@ -298,6 +352,45 @@ body {
       padding: 0 10px;
       transition: 0.2s;
       transform: translateX(100%);
+    }
+  }
+
+  // .header_title
+  &_title {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 83px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #162336;
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 23px;
+      line-height: 30px;
+      margin-bottom: 15px;
+    }
+
+    span {
+      display: block;
+      color: #247cff;
+      @include tablet {
+        display: inline;
+      }
+    }
+  }
+  // .header_subtitle
+  &_subtitle {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #59769f;
+    margin-bottom: 40px;
+    @include tablet {
+      font-size: 16px;
+      line-height: 140%;
+      margin-bottom: 20px;
     }
   }
 }
