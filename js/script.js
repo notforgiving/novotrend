@@ -5,7 +5,7 @@
   });
   const preloader = document.querySelector("#preloader");
   const content = document.querySelector("#content");
-  const startAnimationPreloader = 300;
+  const startAnimationPreloader = 600;
   const finishAnimationPreloader = startAnimationPreloader + 300;
   function init() {
     setTimeout(() => {
