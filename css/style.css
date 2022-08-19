@@ -1,0 +1,700 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  border: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 17px;
+  overflow-x: hidden;
+}
+
+.content {
+  display: none;
+}
+.content.show {
+  display: block;
+}
+
+.preloader {
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.preloader.show {
+  display: flex;
+}
+.preloader .circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-left: 5px solid white;
+  border-right: 5px solid #4fc3f7;
+  border-top: 5px solid white;
+  border-bottom: 5px solid #4fc3f7;
+  border-radius: 100%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.preloader .circle:first-child {
+  width: 100px;
+  height: 100px;
+  -webkit-animation: rotate 1.8s linear 0s infinite;
+          animation: rotate 1.8s linear 0s infinite;
+}
+.preloader .circle:nth-child(2) {
+  width: 130px;
+  height: 130px;
+  -webkit-animation: rotate 1.5s linear 0s infinite;
+          animation: rotate 1.5s linear 0s infinite;
+}
+.preloader .circle:last-child {
+  width: 160px;
+  height: 160px;
+  -webkit-animation: rotate 1.2s linear 0s infinite;
+          animation: rotate 1.2s linear 0s infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.container {
+  max-width: 1320px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  background-image: url(../img/main_bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 0 200px 0;
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 25px 0 200px 0;
+  }
+}
+.header_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_logo {
+  width: 201px;
+}
+@media screen and (max-width: 1024px) {
+  .header_logo {
+    width: 111px;
+  }
+}
+.header_logo img {
+  width: 100%;
+  vertical-align: middle;
+}
+.header_links {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .header_links {
+    display: none;
+  }
+}
+.header_links li {
+  margin-right: 40px;
+}
+.header_links li:last-child {
+  margin-right: 0;
+}
+.header_links a {
+  font-size: 16px;
+  line-height: 130%;
+  color: #162336;
+}
+.header_lang {
+  display: flex;
+  align-items: center;
+}
+.header_lang img {
+  margin-right: 8px;
+}
+.header_lang span {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  color: #272727;
+}
+@media screen and (max-width: 1024px) {
+  .header_lang span {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+.header_right-side {
+  display: flex;
+  align-items: center;
+}
+.header_download {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+@media screen and (max-width: 1024px) {
+  .header_download {
+    display: none;
+  }
+}
+.header_download svg {
+  margin-right: 5px;
+}
+.header_login {
+  display: flex;
+  align-items: center;
+}
+.header_login svg {
+  margin-right: 5px;
+}
+@media screen and (max-width: 1024px) {
+  .header_login svg {
+    margin-right: 0;
+  }
+}
+.header_login span {
+  color: #247cff;
+}
+@media screen and (max-width: 1024px) {
+  .header_login span {
+    display: none;
+  }
+}
+.header_burger {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .header_burger {
+    display: block;
+    position: relative;
+  }
+}
+.header_burger-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background: rgba(36, 123, 255, 0.1019607843);
+  position: relative;
+}
+.header_burger-btn:hover {
+  cursor: pointer;
+}
+.header_burger-btn span {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #162336;
+}
+.header_burger-btn span:first-child {
+  left: 50%;
+  top: calc(50% - 6px);
+  transform: translate(-50%, -50%);
+}
+.header_burger-btn span:nth-child(2) {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.header_burger-btn span:last-child {
+  left: 50%;
+  bottom: calc(50% - 8px);
+  transform: translate(-50%, -50%);
+}
+.header_burger-body {
+  position: absolute;
+  top: 100%;
+  right: -10px;
+  width: 100vw;
+  z-index: 50;
+  transition: 0.3s;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.header_burger-body.show {
+  transform: translateX(0%);
+  opacity: 1;
+}
+.header_burger-body.show .header_links li:nth-child(1) {
+  -webkit-animation: showItemsMenu 1s linear 0.1s 1 forwards;
+          animation: showItemsMenu 1s linear 0.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(2) {
+  -webkit-animation: showItemsMenu 1s linear 0.2s 1 forwards;
+          animation: showItemsMenu 1s linear 0.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(3) {
+  -webkit-animation: showItemsMenu 1s linear 0.3s 1 forwards;
+          animation: showItemsMenu 1s linear 0.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(4) {
+  -webkit-animation: showItemsMenu 1s linear 0.4s 1 forwards;
+          animation: showItemsMenu 1s linear 0.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(5) {
+  -webkit-animation: showItemsMenu 1s linear 0.5s 1 forwards;
+          animation: showItemsMenu 1s linear 0.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(6) {
+  -webkit-animation: showItemsMenu 1s linear 0.6s 1 forwards;
+          animation: showItemsMenu 1s linear 0.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(7) {
+  -webkit-animation: showItemsMenu 1s linear 0.7s 1 forwards;
+          animation: showItemsMenu 1s linear 0.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(8) {
+  -webkit-animation: showItemsMenu 1s linear 0.8s 1 forwards;
+          animation: showItemsMenu 1s linear 0.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(9) {
+  -webkit-animation: showItemsMenu 1s linear 0.9s 1 forwards;
+          animation: showItemsMenu 1s linear 0.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(10) {
+  -webkit-animation: showItemsMenu 1s linear 1s 1 forwards;
+          animation: showItemsMenu 1s linear 1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(11) {
+  -webkit-animation: showItemsMenu 1s linear 1.1s 1 forwards;
+          animation: showItemsMenu 1s linear 1.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(12) {
+  -webkit-animation: showItemsMenu 1s linear 1.2s 1 forwards;
+          animation: showItemsMenu 1s linear 1.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(13) {
+  -webkit-animation: showItemsMenu 1s linear 1.3s 1 forwards;
+          animation: showItemsMenu 1s linear 1.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(14) {
+  -webkit-animation: showItemsMenu 1s linear 1.4s 1 forwards;
+          animation: showItemsMenu 1s linear 1.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(15) {
+  -webkit-animation: showItemsMenu 1s linear 1.5s 1 forwards;
+          animation: showItemsMenu 1s linear 1.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(16) {
+  -webkit-animation: showItemsMenu 1s linear 1.6s 1 forwards;
+          animation: showItemsMenu 1s linear 1.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(17) {
+  -webkit-animation: showItemsMenu 1s linear 1.7s 1 forwards;
+          animation: showItemsMenu 1s linear 1.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(18) {
+  -webkit-animation: showItemsMenu 1s linear 1.8s 1 forwards;
+          animation: showItemsMenu 1s linear 1.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(19) {
+  -webkit-animation: showItemsMenu 1s linear 1.9s 1 forwards;
+          animation: showItemsMenu 1s linear 1.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(20) {
+  -webkit-animation: showItemsMenu 1s linear 2s 1 forwards;
+          animation: showItemsMenu 1s linear 2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(21) {
+  -webkit-animation: showItemsMenu 1s linear 2.1s 1 forwards;
+          animation: showItemsMenu 1s linear 2.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(22) {
+  -webkit-animation: showItemsMenu 1s linear 2.2s 1 forwards;
+          animation: showItemsMenu 1s linear 2.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(23) {
+  -webkit-animation: showItemsMenu 1s linear 2.3s 1 forwards;
+          animation: showItemsMenu 1s linear 2.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(24) {
+  -webkit-animation: showItemsMenu 1s linear 2.4s 1 forwards;
+          animation: showItemsMenu 1s linear 2.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(25) {
+  -webkit-animation: showItemsMenu 1s linear 2.5s 1 forwards;
+          animation: showItemsMenu 1s linear 2.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(26) {
+  -webkit-animation: showItemsMenu 1s linear 2.6s 1 forwards;
+          animation: showItemsMenu 1s linear 2.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(27) {
+  -webkit-animation: showItemsMenu 1s linear 2.7s 1 forwards;
+          animation: showItemsMenu 1s linear 2.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(28) {
+  -webkit-animation: showItemsMenu 1s linear 2.8s 1 forwards;
+          animation: showItemsMenu 1s linear 2.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(29) {
+  -webkit-animation: showItemsMenu 1s linear 2.9s 1 forwards;
+          animation: showItemsMenu 1s linear 2.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(30) {
+  -webkit-animation: showItemsMenu 1s linear 3s 1 forwards;
+          animation: showItemsMenu 1s linear 3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(31) {
+  -webkit-animation: showItemsMenu 1s linear 3.1s 1 forwards;
+          animation: showItemsMenu 1s linear 3.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(32) {
+  -webkit-animation: showItemsMenu 1s linear 3.2s 1 forwards;
+          animation: showItemsMenu 1s linear 3.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(33) {
+  -webkit-animation: showItemsMenu 1s linear 3.3s 1 forwards;
+          animation: showItemsMenu 1s linear 3.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(34) {
+  -webkit-animation: showItemsMenu 1s linear 3.4s 1 forwards;
+          animation: showItemsMenu 1s linear 3.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(35) {
+  -webkit-animation: showItemsMenu 1s linear 3.5s 1 forwards;
+          animation: showItemsMenu 1s linear 3.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(36) {
+  -webkit-animation: showItemsMenu 1s linear 3.6s 1 forwards;
+          animation: showItemsMenu 1s linear 3.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(37) {
+  -webkit-animation: showItemsMenu 1s linear 3.7s 1 forwards;
+          animation: showItemsMenu 1s linear 3.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(38) {
+  -webkit-animation: showItemsMenu 1s linear 3.8s 1 forwards;
+          animation: showItemsMenu 1s linear 3.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(39) {
+  -webkit-animation: showItemsMenu 1s linear 3.9s 1 forwards;
+          animation: showItemsMenu 1s linear 3.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(40) {
+  -webkit-animation: showItemsMenu 1s linear 4s 1 forwards;
+          animation: showItemsMenu 1s linear 4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(41) {
+  -webkit-animation: showItemsMenu 1s linear 4.1s 1 forwards;
+          animation: showItemsMenu 1s linear 4.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(42) {
+  -webkit-animation: showItemsMenu 1s linear 4.2s 1 forwards;
+          animation: showItemsMenu 1s linear 4.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(43) {
+  -webkit-animation: showItemsMenu 1s linear 4.3s 1 forwards;
+          animation: showItemsMenu 1s linear 4.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(44) {
+  -webkit-animation: showItemsMenu 1s linear 4.4s 1 forwards;
+          animation: showItemsMenu 1s linear 4.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(45) {
+  -webkit-animation: showItemsMenu 1s linear 4.5s 1 forwards;
+          animation: showItemsMenu 1s linear 4.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(46) {
+  -webkit-animation: showItemsMenu 1s linear 4.6s 1 forwards;
+          animation: showItemsMenu 1s linear 4.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(47) {
+  -webkit-animation: showItemsMenu 1s linear 4.7s 1 forwards;
+          animation: showItemsMenu 1s linear 4.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(48) {
+  -webkit-animation: showItemsMenu 1s linear 4.8s 1 forwards;
+          animation: showItemsMenu 1s linear 4.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(49) {
+  -webkit-animation: showItemsMenu 1s linear 4.9s 1 forwards;
+          animation: showItemsMenu 1s linear 4.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(50) {
+  -webkit-animation: showItemsMenu 1s linear 5s 1 forwards;
+          animation: showItemsMenu 1s linear 5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(51) {
+  -webkit-animation: showItemsMenu 1s linear 5.1s 1 forwards;
+          animation: showItemsMenu 1s linear 5.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(52) {
+  -webkit-animation: showItemsMenu 1s linear 5.2s 1 forwards;
+          animation: showItemsMenu 1s linear 5.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(53) {
+  -webkit-animation: showItemsMenu 1s linear 5.3s 1 forwards;
+          animation: showItemsMenu 1s linear 5.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(54) {
+  -webkit-animation: showItemsMenu 1s linear 5.4s 1 forwards;
+          animation: showItemsMenu 1s linear 5.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(55) {
+  -webkit-animation: showItemsMenu 1s linear 5.5s 1 forwards;
+          animation: showItemsMenu 1s linear 5.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(56) {
+  -webkit-animation: showItemsMenu 1s linear 5.6s 1 forwards;
+          animation: showItemsMenu 1s linear 5.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(57) {
+  -webkit-animation: showItemsMenu 1s linear 5.7s 1 forwards;
+          animation: showItemsMenu 1s linear 5.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(58) {
+  -webkit-animation: showItemsMenu 1s linear 5.8s 1 forwards;
+          animation: showItemsMenu 1s linear 5.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(59) {
+  -webkit-animation: showItemsMenu 1s linear 5.9s 1 forwards;
+          animation: showItemsMenu 1s linear 5.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(60) {
+  -webkit-animation: showItemsMenu 1s linear 6s 1 forwards;
+          animation: showItemsMenu 1s linear 6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(61) {
+  -webkit-animation: showItemsMenu 1s linear 6.1s 1 forwards;
+          animation: showItemsMenu 1s linear 6.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(62) {
+  -webkit-animation: showItemsMenu 1s linear 6.2s 1 forwards;
+          animation: showItemsMenu 1s linear 6.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(63) {
+  -webkit-animation: showItemsMenu 1s linear 6.3s 1 forwards;
+          animation: showItemsMenu 1s linear 6.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(64) {
+  -webkit-animation: showItemsMenu 1s linear 6.4s 1 forwards;
+          animation: showItemsMenu 1s linear 6.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(65) {
+  -webkit-animation: showItemsMenu 1s linear 6.5s 1 forwards;
+          animation: showItemsMenu 1s linear 6.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(66) {
+  -webkit-animation: showItemsMenu 1s linear 6.6s 1 forwards;
+          animation: showItemsMenu 1s linear 6.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(67) {
+  -webkit-animation: showItemsMenu 1s linear 6.7s 1 forwards;
+          animation: showItemsMenu 1s linear 6.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(68) {
+  -webkit-animation: showItemsMenu 1s linear 6.8s 1 forwards;
+          animation: showItemsMenu 1s linear 6.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(69) {
+  -webkit-animation: showItemsMenu 1s linear 6.9s 1 forwards;
+          animation: showItemsMenu 1s linear 6.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(70) {
+  -webkit-animation: showItemsMenu 1s linear 7s 1 forwards;
+          animation: showItemsMenu 1s linear 7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(71) {
+  -webkit-animation: showItemsMenu 1s linear 7.1s 1 forwards;
+          animation: showItemsMenu 1s linear 7.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(72) {
+  -webkit-animation: showItemsMenu 1s linear 7.2s 1 forwards;
+          animation: showItemsMenu 1s linear 7.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(73) {
+  -webkit-animation: showItemsMenu 1s linear 7.3s 1 forwards;
+          animation: showItemsMenu 1s linear 7.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(74) {
+  -webkit-animation: showItemsMenu 1s linear 7.4s 1 forwards;
+          animation: showItemsMenu 1s linear 7.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(75) {
+  -webkit-animation: showItemsMenu 1s linear 7.5s 1 forwards;
+          animation: showItemsMenu 1s linear 7.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(76) {
+  -webkit-animation: showItemsMenu 1s linear 7.6s 1 forwards;
+          animation: showItemsMenu 1s linear 7.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(77) {
+  -webkit-animation: showItemsMenu 1s linear 7.7s 1 forwards;
+          animation: showItemsMenu 1s linear 7.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(78) {
+  -webkit-animation: showItemsMenu 1s linear 7.8s 1 forwards;
+          animation: showItemsMenu 1s linear 7.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(79) {
+  -webkit-animation: showItemsMenu 1s linear 7.9s 1 forwards;
+          animation: showItemsMenu 1s linear 7.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(80) {
+  -webkit-animation: showItemsMenu 1s linear 8s 1 forwards;
+          animation: showItemsMenu 1s linear 8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(81) {
+  -webkit-animation: showItemsMenu 1s linear 8.1s 1 forwards;
+          animation: showItemsMenu 1s linear 8.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(82) {
+  -webkit-animation: showItemsMenu 1s linear 8.2s 1 forwards;
+          animation: showItemsMenu 1s linear 8.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(83) {
+  -webkit-animation: showItemsMenu 1s linear 8.3s 1 forwards;
+          animation: showItemsMenu 1s linear 8.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(84) {
+  -webkit-animation: showItemsMenu 1s linear 8.4s 1 forwards;
+          animation: showItemsMenu 1s linear 8.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(85) {
+  -webkit-animation: showItemsMenu 1s linear 8.5s 1 forwards;
+          animation: showItemsMenu 1s linear 8.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(86) {
+  -webkit-animation: showItemsMenu 1s linear 8.6s 1 forwards;
+          animation: showItemsMenu 1s linear 8.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(87) {
+  -webkit-animation: showItemsMenu 1s linear 8.7s 1 forwards;
+          animation: showItemsMenu 1s linear 8.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(88) {
+  -webkit-animation: showItemsMenu 1s linear 8.8s 1 forwards;
+          animation: showItemsMenu 1s linear 8.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(89) {
+  -webkit-animation: showItemsMenu 1s linear 8.9s 1 forwards;
+          animation: showItemsMenu 1s linear 8.9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(90) {
+  -webkit-animation: showItemsMenu 1s linear 9s 1 forwards;
+          animation: showItemsMenu 1s linear 9s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(91) {
+  -webkit-animation: showItemsMenu 1s linear 9.1s 1 forwards;
+          animation: showItemsMenu 1s linear 9.1s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(92) {
+  -webkit-animation: showItemsMenu 1s linear 9.2s 1 forwards;
+          animation: showItemsMenu 1s linear 9.2s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(93) {
+  -webkit-animation: showItemsMenu 1s linear 9.3s 1 forwards;
+          animation: showItemsMenu 1s linear 9.3s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(94) {
+  -webkit-animation: showItemsMenu 1s linear 9.4s 1 forwards;
+          animation: showItemsMenu 1s linear 9.4s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(95) {
+  -webkit-animation: showItemsMenu 1s linear 9.5s 1 forwards;
+          animation: showItemsMenu 1s linear 9.5s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(96) {
+  -webkit-animation: showItemsMenu 1s linear 9.6s 1 forwards;
+          animation: showItemsMenu 1s linear 9.6s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(97) {
+  -webkit-animation: showItemsMenu 1s linear 9.7s 1 forwards;
+          animation: showItemsMenu 1s linear 9.7s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(98) {
+  -webkit-animation: showItemsMenu 1s linear 9.8s 1 forwards;
+          animation: showItemsMenu 1s linear 9.8s 1 forwards;
+}
+.header_burger-body.show .header_links li:nth-child(99) {
+  -webkit-animation: showItemsMenu 1s linear 9.9s 1 forwards;
+          animation: showItemsMenu 1s linear 9.9s 1 forwards;
+}
+.header_burger-body.show .header_download {
+  -webkit-animation: showItemsMenu 1s linear 0.8s 1 forwards;
+          animation: showItemsMenu 1s linear 0.8s 1 forwards;
+}
+.header_burger-body .header_links {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+}
+.header_burger-body .header_links li {
+  padding: 0 10px;
+  margin-right: 0;
+  text-align: right;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eaf2ff;
+  margin-bottom: 30px;
+  transition: 0.2s;
+  transform: translateX(100%);
+}
+.header_burger-body .header_links li:first-child {
+  padding-top: 30px;
+}
+.header_burger-body .header_download {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
+  padding: 0 10px;
+  transition: 0.2s;
+  transform: translateX(100%);
+}
+
+@-webkit-keyframes showItemsMenu {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes showItemsMenu {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}/*# sourceMappingURL=style.css.map */
